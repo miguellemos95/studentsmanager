@@ -1,0 +1,41 @@
+<div id="content">
+  <div id="filters">
+    <div id="info">
+      <label style="font-weight: bold;" for="file">Choose File: </label>
+      <input style="margin-top: 2px;" type="file" id="file" (change)="handleFileInput($event.target.files)">
+      <br>
+      <label style="font-weight: bold; margin-right: 4px;" for="file">Choose Algorithm: </label>
+      <select class="selalg" *ngIf="algorithms" id="dropdownAlgorithms" [ngModel]="selectedAlgorithm" (ngModelChange)="optionSelect($event)" >
+        <option [ngValue]="algorithm" *ngFor="let algorithm of algorithms" >
+          {{ algorithm.name }}
+        </option>
+      </select>
+  </div>
+    <div id="info2">
+      <span style="font-weight: bold;">Time execution: </span>{{timer}} milisseconds
+      <br>
+      <span style="font-weight: bold;">Total students: </span>{{students?.length}}
+      <br>
+      <a [href]="fileUrl" download="students.txt">DownloadFile</a>
+    </div>
+  </div>
+  <div id="tablecontent">
+    <table mat-table [dataSource]="students" class="mat-elevation-z8">
+
+      <!-- Position Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td mat-cell *matCellDef="let element"> {{ element.name }} </td>
+      </ng-container>
+
+      <!-- code -->
+      <ng-container matColumnDef="grade">
+        <th mat-header-cell *matHeaderCellDef> Grade </th>
+        <td mat-cell *matCellDef="let element"> {{ element.performance.grade }} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+</div>

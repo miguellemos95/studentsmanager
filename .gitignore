@@ -1,15 +1,15 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
 # Compiled output
-/dist
-/tmp
-/out-tsc
-/bazel-out
+studentsmanagerapp/dist
+studentsmanagerapp/tmp
+studentsmanagerapp/out-tsc
+studentsmanagerapp/bazel-out
 
 # Node
-/node_modules
-npm-debug.log
-yarn-error.log
+studentsmanagerapp/node_modules
+studentsmanagerapp/npm-debug.log
+studentsmanagerapp/yarn-error.log
 
 # IDEs and editors
 .idea/
@@ -21,12 +21,13 @@ yarn-error.log
 *.sublime-workspace
 
 # Visual Studio Code
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-.history/*
+studentsmanagerapp/.angular/cache/*
+studentsmanagerapp/.vscode/*
+!studentsmanagerapp/.vscode/settings.json
+!studentsmanagerapp/.vscode/tasks.json
+!studentsmanagerapp/.vscode/launch.json
+!studentsmanagerapp/.vscode/extensions.json
+studentsmanagerapp/.history/*
 
 # Miscellaneous
 /.angular/cache
