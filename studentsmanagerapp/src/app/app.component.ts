@@ -37,7 +37,6 @@ export class AppComponent implements OnInit, AfterViewInit {
     for (var i = 0; i < this.students.length; i ++) {
       data += this.students[i].name + ";" + this.students[i].performance.grade + "\n";
     }
-    console.log(data);
 
     const blob = new Blob([data], { type: 'application/octet-stream' });
 
@@ -49,7 +48,6 @@ export class AppComponent implements OnInit, AfterViewInit {
     console.log(this.fileToUpload);
     this.studentService.postFile(this.fileToUpload).subscribe(
       (response: Student[]) => {
-        console.log(response);
         this.students = response;
         this.dataSource = this.students;
         this.createStudentsFileExport();
@@ -68,15 +66,10 @@ export class AppComponent implements OnInit, AfterViewInit {
     this.applyAlgorithm(item);
   }
 
-
-
   applyAlgorithm(item){
     console.log(this.sortStudentsRequest);
 
     this.sortStudentsRequest = { selectedAlgorithm: item, students: this.students };
-
-    this.sortStudentsRequest.selectedAlgorithm = item;
-    this.sortStudentsRequest.students = this.students;
 
     this.algorithmService.applyAlgorithm(this.sortStudentsRequest).subscribe(data=>{
       console.log(data);
@@ -103,18 +96,6 @@ export class AppComponent implements OnInit, AfterViewInit {
       (response: SortAlgorithm[]) => {
         this.algorithms = response;
         console.log(this.algorithms);
-      },
-      (error: HttpErrorResponse) => {
-        alert(error.message);
-      }
-    );
-  }
-
-  public seedStudents(): void {
-    this.studentService.seedStudents().subscribe(
-      (response: Student[]) => {
-        this.students = response;
-        console.log(this.students);
       },
       (error: HttpErrorResponse) => {
         alert(error.message);

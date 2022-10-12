@@ -16,10 +16,6 @@ export class StudentService {
     return this.http.get<Student[]>(`${this.apiServerUrl}/student/all`);
   }
 
-  public seedStudents(): Observable<Student[]> {
-    return this.http.get<Student[]>(`${this.apiServerUrl}/student/seed`);
-  }
-
   public postFile(fileToUpload): Observable<Student[]>{
     console.log(fileToUpload);
     const formData = new FormData();

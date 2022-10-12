@@ -38,8 +38,7 @@ public class StudentsService implements IStudentsService {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        Scanner input = null;
-        input = new Scanner(is);
+        Scanner input = new Scanner(is);
 
         input.useDelimiter(";|\n");
 
