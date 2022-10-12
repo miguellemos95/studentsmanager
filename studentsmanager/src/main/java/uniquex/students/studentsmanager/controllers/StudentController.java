@@ -20,13 +20,13 @@ public class StudentController {
     }
 
     @GetMapping("/all")
-    public ResponseEntity<List<Student>> getAllEmployees () {
+    public ResponseEntity<List<Student>> getAllStudents () {
         ArrayList<Student> employees = studentsService.getAllStudents();
         return new ResponseEntity<>(employees, HttpStatus.OK);
     }
 
     @PostMapping("/addAll")
-    public ResponseEntity<List<Student>> AddAllEmployees(@RequestParam("file") MultipartFile file) {
+    public ResponseEntity<List<Student>> AddAllStudents(@RequestParam("file") MultipartFile file) {
         studentsService.importStudentsFromFile(file);
         return new ResponseEntity<>(studentsService.getAllStudents(), HttpStatus.OK);
     }
