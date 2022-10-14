@@ -9,5 +9,7 @@ import java.util.ArrayList;
 public interface IAlgorithmService {
     void seed();
     ArrayList<Algorithm> getAllAlgorithms();
+    /**long applyAlgorithm(Algorithm key, ArrayList<Student> students);**/
     long applyAlgorithm(Algorithm key, ArrayList<Student> students);
+
 }
