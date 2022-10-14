@@ -11,8 +11,8 @@ public class BubbleSort extends Algorithm implements Sortable {
     }
 
     @Override
-    public void sort(ArrayList<Student> studentsList) {
-        BubbleSortAlgorithm.sort(studentsList);
+    public <T extends Comparable<T>> void sort(ArrayList<T> list) {
+        BubbleSortAlgorithm.sort(list);
     }
 
     @Override

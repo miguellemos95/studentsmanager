@@ -12,8 +12,8 @@ public class HeapSort extends Algorithm implements Sortable {
     }
 
     @Override
-    public void sort(ArrayList<Student> studentsList) {
-        HeapSortAlgorithm.sort(studentsList);
+    public <T extends Comparable<T>> void sort(ArrayList<T> list) {
+        HeapSortAlgorithm.sort(list);
     }
 
     @Override

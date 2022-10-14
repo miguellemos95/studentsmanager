@@ -12,8 +12,8 @@ public class MergeSort extends Algorithm  implements Sortable {
     }
 
     @Override
-    public void sort(ArrayList<Student> studentsList) {
-        MergeSortAlgorithm.sort(studentsList);
+    public <T extends Comparable<T>> void sort(ArrayList<T> list) {
+        MergeSortAlgorithm.sort(list);
     }
 
     @Override

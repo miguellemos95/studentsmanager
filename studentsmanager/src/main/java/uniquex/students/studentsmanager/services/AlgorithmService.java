@@ -21,8 +21,8 @@ public class AlgorithmService implements IAlgorithmService {
 
     public void seed(){
         algorithms.clear();
-        addAlgorithm(1, new MergeSort(1, "Bubble Sort"));
-        addAlgorithm(2, new MergeSort(2, "Heap Sort"));
+        addAlgorithm(1, new BubbleSort(1, "Bubble Sort"));
+        addAlgorithm(2, new HeapSort(2, "Heap Sort"));
         addAlgorithm(3, new MergeSort(3, "Merge Sort"));
         /**addAlgorithm(new BubbleSort(1, "Bubble Sort"), this::BubbleSort);
          addAlgorithm(new HeapSort(2, "Heap Sort"), this::HeapSort);
